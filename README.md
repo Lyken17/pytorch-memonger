@@ -7,9 +7,9 @@ you may also want to look the [original mxnet implementation](https://github.com
 ## How to use 
 
 Different from TensorFlow and mxnet where the computation graph is static and known before actual computing,
-pytorch's philosophy is **define-by-run** and graph details are not known until forward is finished. This implemention
-only supports `Sequential` models. You only need to replace `nn.Sequential` with `memonger.SublinearSequential`, 
-the memory required for backward can be reduced from `O(N)` to `O(sqrt(N))`.
+pytorch's philosophy is **define-by-run** and the graph details are not known until forward is finished. This implemention
+only supports `Sequential` models. By replacing `nn.Sequential` with `memonger.SublinearSequential`, 
+the memory required for backward is reduced from `O(N)` to `O(sqrt(N))`.
 
 ```python
 # previous, O(N) memory footprint
