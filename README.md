@@ -27,7 +27,7 @@ net1 = nn.Sequential(
     ...
 )
 
-# optimized, O(N) memory footprint
+# optimized, O(sqrt(N)) memory footprint
 from momonger import SublinearSequential
 net2 = SublinearSequential(
     *list(net1.children())  
