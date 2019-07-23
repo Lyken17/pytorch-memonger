@@ -1,6 +1,6 @@
 # pytorch-memonger
 
-This is a re-implementation of Training [Deep Nets with Sublinear Memory Cost](https://arxiv.org/abs/1604.06174). 
+This is a re-implementation of [Training Deep Nets with Sublinear Memory Cost](https://arxiv.org/abs/1604.06174). 
 You may also want to have a look at the [original mxnet implementation](https://github.com/dmlc/mxnet-memonger) and 
 [OpenAI's tensorflow implementation](https://github.com/openai/gradient-checkpointing).
 
