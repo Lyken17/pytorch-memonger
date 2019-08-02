@@ -4,6 +4,13 @@ This is a re-implementation of [Training Deep Nets with Sublinear Memory Cost](h
 You may also want to have a look at the [original mxnet implementation](https://github.com/dmlc/mxnet-memonger) and 
 [OpenAI's tensorflow implementation](https://github.com/openai/gradient-checkpointing).
 
+## Speed / Memory Comparision
+
+Model (Batch size 16) | Memory | Speed 
+--- | --- | ---
+original resnet152	| 5459MiB | 2.9258 iter/s
+Checkpoint (Sublinear) | 2455MiB | 2.6273 iter/s
+
 ## How to use 
 
 Different from TensorFlow and mxnet where the computation graph is static and known before actual computing,
@@ -34,13 +41,6 @@ net2 = SublinearSequential(
 )
 ```    
  
-## Speed / Memory Comparision
-
-Model (Batch size 16) | Memory | Speed 
---- | --- | ---
-original resnet152	| 5459MiB | 2.9258 iter/s
-Checkpoint (Sublinear) | 2455MiB | 2.6273 iter/s
-
 ## Caution
 
 Since sublinear memory optimization requires re-forwarding, if your model contains layer with non-derministic behavior 
