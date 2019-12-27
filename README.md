@@ -45,4 +45,4 @@ net2 = SublinearSequential(
 
 Since sublinear memory optimization requires re-forwarding, if your model contains layer with non-derministic behavior 
 (e.g, BatchNorm, Dropout), you need to be careful when using the module. I have supported BatchNorm by [re-scaling momentum 
-](momonger/memonger.py#L24). Support for dropout is still under construction.
+](momonger/memonger.py#L24), dropout by memorizing the random number generator (RNG) .
