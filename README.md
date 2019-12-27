@@ -35,7 +35,7 @@ net1 = nn.Sequential(
 )
 
 # optimized, O(sqrt(N)) memory footprint
-from momonger import SublinearSequential
+from memonger import SublinearSequential
 net2 = SublinearSequential(
     *list(net1.children())  
 )
@@ -45,4 +45,4 @@ net2 = SublinearSequential(
 
 Since sublinear memory optimization requires re-forwarding, if your model contains layer with non-derministic behavior 
 (e.g, BatchNorm, Dropout), you need to be careful when using the module. I have supported BatchNorm by [re-scaling momentum 
-](momonger/memonger.py#L24), dropout [by memorizing the random number generator (RNG)](https://github.com/Lyken17/pytorch-memonger/blob/master/momonger/checkpoint.py#L27).
+](memonger/memonger.py#L24), dropout [by memorizing the random number generator (RNG)](https://github.com/Lyken17/pytorch-memonger/blob/master/momonger/checkpoint.py#L27).

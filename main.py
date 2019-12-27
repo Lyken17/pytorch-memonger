@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 from torch.utils import checkpoint
-from momonger import SublinearSequential
+from memonger import SublinearSequential
 
 if __name__ == '__main__':
     data = torch.randn(1, 3, 5, 5)
